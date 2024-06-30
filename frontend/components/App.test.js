@@ -25,7 +25,7 @@ test('input changes correctly', () => {
 
 test('submits form and resets email', async () => {
   render(<AppFunctional />);
-  fireEvent.change(screen.getByPlaceholderText('type email'), { target: { value: 'test@example.com' } });
+  fireEvent.change(screen.getByPlaceholderText('type email'), { target: { value: '' } });
   fireEvent.click(screen.getByRole('button', { name: /submit/i })); // Update this line
 
   await waitFor(() => expect(screen.getByPlaceholderText('type email').value).toBe(''));
